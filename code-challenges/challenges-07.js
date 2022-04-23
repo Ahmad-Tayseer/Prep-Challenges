@@ -87,31 +87,35 @@ const objLat = (obj) => {
 //  1- Full name is first name + last name
 //  2- If one of the names is null don`t add it to the full name
 
-    var allCvs = [];
+// const cvFormatter = (arr) => {
+//     let output = []
+//     for (let i = 0; i < arr.length; i++) {
 
-function CV(fullName, tech) {
-    this.fullName = fullName;
-    this.tech = tech;
-    this.pushToTheList = function() {
-        allCvs.push(this);
-    }
-}
+//         if (arr[i].lastName == null && arr[i].yearsOfExperience > 1) {
+//             output.push({ fullName: `${arr[i].firstName}`, tech: `${arr[i].tech}` })
+
+//         } else if (arr[i].yearsOfExperience > 1) {
+//             output.push({ fullName: `${arr[i].firstName} ${arr[i].lastName}`, tech: `${arr[i].tech}` })
+//         } else continue;
+//     } return output;
+// };
 
 const cvFormatter = (arr) => {
-    let x = {};
+    let allCvs = [];
     for (let i = 0; i < arr.length; i++) {
         if (arr[i].yearsOfExperience > 1) {
            if (arr[i].firstName == null) {
-            let x = new CV(arr[i].lastName, arr[i].tech);
+            allCvs.push({fullName: `${arr[i].lastName}`, tech: `${arr[i].tech}`})
            } else if (arr[i].lastName == null) {
-            let x = new CV(arr[i].firstName, arr[i].tech);
+            allCvs.push({fullName: `${arr[i].firstName}`, tech: `${arr[i].tech}`})
            } else {
-            let x = new CV(arr[i].firstName + " " + arr[i].lastName, arr[i].tech);
+            allCvs.push({fullName: `${arr[i].firstName} ${arr[i].lastName}`, tech: `${arr[i].tech}`})
            }
-           }
-        }
-    // write your code here
+        
+        } else continue;
+    } 
     return allCvs;
+// write your code here
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -136,8 +140,87 @@ const cvFormatter = (arr) => {
 //  Note that:
 //  1- rejectedApplicants are applications that has both the names empty or null and whoever have one year or less of Experience
 
+
+// function Statistics(python_devs, javaScript_devs, dotNet_devs, java_devs, totalApplicants, rejectedApplicants) {
+//     this.python_devs = python_devs;
+//     this.javaScript_devs = javaScript_devs;
+//     this.dotNet_devs = dotNet_devs;
+//     this.java_devs = java_devs;
+//     this.totalApplicants = totalApplicants;
+//     this.rejectedApplicants = rejectedApplicants;
+// };
+
+// let python_devs = 0;
+// let javaScript_devs = 0;
+// let dotNet_devs = 0;
+// let java_devs = 0;
+// let totalApplicants = 0;
+// let rejectedApplicants = 0;
+
+// function statistics(employeeTech) {
+//     if (employeeTech == "Python") {
+//         python_devs = python_devs + 1;
+//         return python_devs;
+//     } else if (employeeTech == "JS") {
+//         javaScript_devs = javaScript_devs +1;
+//         return javaScript_devs;
+//     } else if(employeeTech == ".Net") {
+//         dotNet_devs = dotNet_devs + 1;
+//         return dotNet_devs;
+//     } else if(employeeTech == "Java") {                    
+//         java_devs = java_devs + 1;
+//         return java_devs;
+//     }
+// }
+
+
 const applicationsStatics = (arr) => {
-    // write your code here
+        let python_devs = 0;
+        let javaScript_devs = 0;
+        let dotNet_devs = 0;
+        let java_devs = 0;
+        let totalApplicants = 0;
+        let rejectedApplicants = 0;
+        let results = {}
+
+    for (let i = 0; i < arr.length; i++) {
+        totalApplicants = totalApplicants +1;
+        if (arr[i].yearsOfExperience <= 1) {
+            rejectedApplicants = rejectedApplicants + 1;
+            // statistics(arr[i].tech);
+            if (arr[i].tech == "Python") {
+                python_devs = python_devs + 1;
+            } else if (arr[i].tech == "JS") {
+                javaScript_devs = javaScript_devs +1;
+            } else if(arr[i].tech == ".Net") {
+                dotNet_devs = dotNet_devs + 1;
+            } else if(arr[i].tech == "Java") {                    
+                java_devs = java_devs + 1;
+            } 
+        } else {
+            // statistics(arr[i].tech);
+            if (arr[i].tech == "Python") {
+                python_devs = python_devs + 1;
+            } else if (arr[i].tech == "JS") {
+                javaScript_devs = javaScript_devs +1;
+            } else if(arr[i].tech == ".Net") {
+                dotNet_devs = dotNet_devs + 1;
+            } else if(arr[i].tech == "Java") {                    
+                java_devs = java_devs + 1;
+            }
+        }
+        // if (arr[i].firstName == null && arr[i].lastName == null) {
+        //     rejectedApplicants = rejectedApplicants + 1;
+        // } else if (arr[i].firstName == "" && arr[i].lastName == "") {
+        //     rejectedApplicants = rejectedApplicants + 1;
+        // } 
+    }
+    // let results = new Statistics(python_devs, javaScript_devs, dotNet_devs, java_devs, totalApplicants, rejectedApplicants);
+    // return results;
+    // results = {python_devs: `${python_devs}`, javaScript_devs: `${javaScript_devs}`, dotNet_devs: `${dotNet_devs}`, java_devs: `${java_devs}`, totalApplicants: `${totalApplicants}`, rejectedApplicants: `${rejectedApplicants}`};
+    results = {python_devs: python_devs, javaScript_devs: javaScript_devs, dotNet_devs: dotNet_devs, java_devs: java_devs, totalApplicants: totalApplicants, rejectedApplicants: rejectedApplicants};
+    return results;
+//     // write your code here
 };
 // -------------------------------------------------------------------------------------------------------
 
