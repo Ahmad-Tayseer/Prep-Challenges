@@ -24,7 +24,9 @@
         {
             "language": "javascript",
             "source": [
-                ""
+exercise10
+                "function birthdayCakeCandles(candles) {\n    // Write your code here\n    let candleTall = 0;\n    let candlesNum = 0;\n    for (let i = 0; i < candles.length; i++) {\n        if (candles[i] > candleTall) {\n            candleTall = candles[i];\n            candlesNum = 1;\n        } else if (candles[i] == candleTall) {\n            candlesNum = candlesNum + 1;\n        }\n    }\n    return candlesNum;\n}"
+main
             ],
             "outputs": []
         },
@@ -45,7 +47,9 @@
         {
             "language": "javascript",
             "source": [
-                ""
+exercise10
+                "function compareTriplets(a, b) {\n    // Write your code here\n    let alicePoints = 0;\n    let bobPoints = 0;\n    for (let i = 0; i < 3; i++) {\n        if (a[i] > b[i]) {\n            alicePoints = alicePoints + 1;\n        } else if (a[i] < b[i]) {\n            bobPoints = bobPoints + 1;\n        } \n    }\n    return [alicePoints, bobPoints];\n}"
+main
             ],
             "outputs": []
         },
@@ -59,7 +63,9 @@
         {
             "language": "javascript",
             "source": [
-                ""
+exercise10
+                "function migratoryBirds(arr) {\n    // Write your code here\n    let id1 = 0;\n    let id2 = 0;\n    let id3 = 0;\n    let id4 = 0;\n    let id5 = 0;\n    let maxAmount = 0;\n    let num = 0;\n\n    for (let i = 0; i < arr.length; i++){\n        if (arr[i] == 1) {\n            id1 = id1 + 1;\n        } else if (arr[i] == 2) {\n            id2 = id2 + 1;\n        } else if (arr[i] == 3) {\n            id3 = id3 + 1; \n        } else if (arr[i] == 4) {\n            id4 = id4 + 1;\n        } else if (arr[i] == 5) {\n            id5 = id5 + 1;\n        }\n    }\n    let birdsNum = [id1, id2, id3, id4, id5];\n    for (let i = 0; i < birdsNum.length; i++) {\n        if (birdsNum[i] > maxAmount) {\n            maxAmount = birdsNum[i];\n            num = i + 1;\n        } else if (birdsNum[i] == maxAmount) {\n            num = i;\n        }\n    }\n    return num;\n}\n"
+main
             ],
             "outputs": []
         }
