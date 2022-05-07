@@ -140,40 +140,6 @@ const cvFormatter = (arr) => {
 //  Note that:
 //  1- rejectedApplicants are applications that has both the names empty or null and whoever have one year or less of Experience
 
-
-// function Statistics(python_devs, javaScript_devs, dotNet_devs, java_devs, totalApplicants, rejectedApplicants) {
-//     this.python_devs = python_devs;
-//     this.javaScript_devs = javaScript_devs;
-//     this.dotNet_devs = dotNet_devs;
-//     this.java_devs = java_devs;
-//     this.totalApplicants = totalApplicants;
-//     this.rejectedApplicants = rejectedApplicants;
-// };
-
-// let python_devs = 0;
-// let javaScript_devs = 0;
-// let dotNet_devs = 0;
-// let java_devs = 0;
-// let totalApplicants = 0;
-// let rejectedApplicants = 0;
-
-// function statistics(employeeTech) {
-//     if (employeeTech == "Python") {
-//         python_devs = python_devs + 1;
-//         return python_devs;
-//     } else if (employeeTech == "JS") {
-//         javaScript_devs = javaScript_devs +1;
-//         return javaScript_devs;
-//     } else if(employeeTech == ".Net") {
-//         dotNet_devs = dotNet_devs + 1;
-//         return dotNet_devs;
-//     } else if(employeeTech == "Java") {                    
-//         java_devs = java_devs + 1;
-//         return java_devs;
-//     }
-// }
-
-
 const applicationsStatics = (arr) => {
         let python_devs = 0;
         let javaScript_devs = 0;
@@ -187,7 +153,6 @@ const applicationsStatics = (arr) => {
         totalApplicants = totalApplicants +1;
         if (arr[i].yearsOfExperience <= 1) {
             rejectedApplicants = rejectedApplicants + 1;
-            // statistics(arr[i].tech);
             if (arr[i].tech == "Python") {
                 python_devs = python_devs + 1;
             } else if (arr[i].tech == "JS") {
@@ -198,7 +163,6 @@ const applicationsStatics = (arr) => {
                 java_devs = java_devs + 1;
             } 
         } else {
-            // statistics(arr[i].tech);
             if (arr[i].tech == "Python") {
                 python_devs = python_devs + 1;
             } else if (arr[i].tech == "JS") {
@@ -209,15 +173,7 @@ const applicationsStatics = (arr) => {
                 java_devs = java_devs + 1;
             }
         }
-        // if (arr[i].firstName == null && arr[i].lastName == null) {
-        //     rejectedApplicants = rejectedApplicants + 1;
-        // } else if (arr[i].firstName == "" && arr[i].lastName == "") {
-        //     rejectedApplicants = rejectedApplicants + 1;
-        // } 
     }
-    // let results = new Statistics(python_devs, javaScript_devs, dotNet_devs, java_devs, totalApplicants, rejectedApplicants);
-    // return results;
-    // results = {python_devs: `${python_devs}`, javaScript_devs: `${javaScript_devs}`, dotNet_devs: `${dotNet_devs}`, java_devs: `${java_devs}`, totalApplicants: `${totalApplicants}`, rejectedApplicants: `${rejectedApplicants}`};
     results = {python_devs: python_devs, javaScript_devs: javaScript_devs, dotNet_devs: dotNet_devs, java_devs: java_devs, totalApplicants: totalApplicants, rejectedApplicants: rejectedApplicants};
     return results;
 //     // write your code here
