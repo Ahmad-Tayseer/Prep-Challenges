@@ -40,9 +40,9 @@
 
 const objectCounter = (obj) => {
     // write your code here
-    let el = 0;
+    let sum = 1;
     return obj.reduce(function(el) {
-        return el = el + 1;
+        return sum = sum + 1;
     })
 }
 // -------------------------------------------------------------------------------------------------------
@@ -64,7 +64,10 @@ const objectCounter = (obj) => {
 
 const stringReverse = (str) => {
     // write your code here
-
+    let arr = str.split(" ");
+    return arr.reduce(function(previous,current) {
+        return current + " " + previous;
+    })
 }
 // -------------------------------------------------------------------------------------------------------
 

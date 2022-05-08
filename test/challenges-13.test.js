@@ -41,7 +41,7 @@ describe('Challenge13-01', () => {
 });
 
 describe('Challenge13-02', () => {
-    test.skip('String-Reverse', () => {
+    test('String-Reverse', () => {
 
         let test1 = 'you shall not pass';
         let res1 = 'pass not shall you';
