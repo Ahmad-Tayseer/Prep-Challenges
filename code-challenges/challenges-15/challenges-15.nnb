@@ -59,7 +59,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function squares(a, b) {\n    // Write your code here\n    let sum = 0;\n    let num = 1;\n    let sqrNum = 1;\n    while (sqrNum <= b) {\n        if (sqrNum >= a && sqrNum <= b) {\n            sum ++;\n        }\n        num ++;\n        sqrNum = num * num;\n    }\n    return sum;\n}"
             ],
             "outputs": []
         }
